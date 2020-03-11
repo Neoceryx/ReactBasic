@@ -6,11 +6,11 @@
 4.  References
 
 ### Installing Dependencies
-It’s necessary to have **Node js** Installed on our device. for this example i used the LTS version. we can download it from [here]([https://nodejs.org/es/](https://nodejs.org/es/))
+It’s necessary to have **Node js** Installed on our device. for this example i used the LTS version. we can download it from [Here](https://nodejs.org/es/)
 
 Or we can **verify if already have node installed** in our machine, running the following command on CMD. **node -v** (*In my case i have the 10.16.3 version*)
 
-also we'll need a text editor. I recommend to use [visual studio code]([https://code.visualstudio.com/](https://code.visualstudio.com/))
+also we'll need a text editor. I recommend to use [visual studio code](https://code.visualstudio.com/)
 
 ### Creating React Project
 over the CMD or terminal (*if you're using linux or mac*) we are going to execute the following commands, to start whit our React project.
@@ -77,5 +77,7 @@ ReactDOM.render(
 );
 ```
 ### References
-[Official tutorial]([https://es.reactjs.org/tutorial/tutorial.html#setup-for-the-tutorial](https://es.reactjs.org/tutorial/tutorial.html#setup-for-the-tutorial))
-[Handling user input]([https://medium.com/the-andela-way/handling-user-input-in-react-crud-1396e51a70bf](https://medium.com/the-andela-way/handling-user-input-in-react-crud-1396e51a70bf))
+[Official Tutorial](https://es.reactjs.org/tutorial/tutorial.html#setup-for-the-tutorial)
+
+
+[handling User Input](https://medium.com/the-andela-way/handling-user-input-in-react-crud-1396e51a70bf)
