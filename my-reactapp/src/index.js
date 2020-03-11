@@ -120,9 +120,69 @@ class DisplayAlert extends React.Component{
 }
 // End Component
 
+class WeatherForecast extends React.Component{
+
+    // Start Contructor
+    constructor(props){
+        super(props);
+        this.state = {weatherData:""};
+    }
+    // End constructor   
+
+    // Document on ready
+    componentDidMount(){
+        console.log("Hello");
+    }
+    // End document on ready
+
+    GetWeatherForecast = event =>{
+        debugger
+        // validate if weather forecast is storaged in local
+        var IsforecastInLocal = localStorage.getItem("weather") != null ? localStorage.getItem("weather") : null ;
+        
+        // set the Url where the request would be sent
+        let URL ="https://api.weatherbit.io/v2.0/forecast/daily?city_id=3981609&days=16&key=19dbfc63db5446fbaeb3ea537b3bb17e";
+        
+        // Start http request
+        fetch(URL).then(async response=>{
+
+            // gets api response 
+            var data = await response.json();
+            
+            // storage the api response on localstorage. to avoid makes a request every time the page's reloading
+            localStorage.setItem("weather",JSON.stringify(data));
+
+        }).catch(error =>{ // Handling errors   
+            alert("An Error Ocurred while the weather indormation was getting");
+            console.log(error);
+        })
+        // End Http request
+
+    }
+    // End function
+
+    render(){
+
+        return (
+            <React.Fragment>
+                <hr/>
+                <div>
+                    <button type="button" onClick={this.GetWeatherForecast}>
+                        See Weather forecast
+                    </button>
+                </div>
+            </React.Fragment>
+        );
+
+    }
+    // End render function
+
+}
+// End component
+
 ReactDOM.render(
     // To Display All the Components
-    [<SingleForm/>, <MultipleForm/>,<DisplayAlert/>],
+    [<SingleForm/>, <MultipleForm/>,<DisplayAlert/>,<WeatherForecast/>],
 
     // To display Jus one Component
     //<DisplayAlert/>,
