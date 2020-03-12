@@ -7,6 +7,5 @@ Welcome to this personal project in which i'll share with you my experience with
 2. Curiosity to learn
 
 
-See Complete Guide Here
-[React Guide](https://github.com/Neoceryx/ReactBasic/wiki)
+### See Complete Guide Here [React Guide](https://github.com/Neoceryx/ReactBasic/wiki)
 
