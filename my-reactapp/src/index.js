@@ -125,7 +125,9 @@ class WeatherForecast extends React.Component {
     // Start Contructor
     constructor(props) {
         super(props);
-        this.state = { weatherData: "" };
+        this.state = { 
+            weatherData: ""
+        };
     }
     // End constructor   
 
@@ -139,7 +141,7 @@ class WeatherForecast extends React.Component {
         
         // validate if weather forecast is storaged in local
         var IsforecastInLocal = localStorage.getItem("weather") != null ? localStorage.getItem("weather") : null;
-
+        
         // Validate if weather forecast is in local
         if (IsforecastInLocal == null) {
 
@@ -166,16 +168,29 @@ class WeatherForecast extends React.Component {
 
         }else{
             
+            var aaaaa = JSON.parse(IsforecastInLocal)
+
             // Get the Weather forecast information from local
-            this.setState({ weatherData: JSON.parse(IsforecastInLocal) })
-            console.log(this.state.weatherData);
+            this.setState({ weatherData: aaaaa })
         }  
         // End forecast validation
+
+        console.log(this.state.weatherData);
+
 
     }
     // End function
 
     render() {
+
+        // Initialize the variable 
+        var ForeCastData = []
+
+        // Validate if the WeatherDate has the forecast informaiton
+        if (this.state.weatherData.data) {            
+            var ForeCastData = this.state.weatherData.data            
+        }
+        // End forecast validaiton
 
         return (
             <React.Fragment>
@@ -187,12 +202,12 @@ class WeatherForecast extends React.Component {
 
                     <h3>Weather forectas from: {this.state.weatherData.city_name}</h3>
 
-                    <p>
-                        {JSON.stringify(this.state.weatherData.data)}
-                    </p>
-
                     <div>
-                        
+                        <ul>
+                            {ForeCastData.map( (w, index)=>(
+                                <li key={index}>Date:{w.valid_date} :: ForeCastData:{w.weather.description} :: Temperature:{w.temp} :: Min{w.low_temp} :: Max:{w.max_temp} :: Precipitation:{w.precip}  </li>
+                            ))}                            
+                        </ul>
                     </div>
 
                 </div>
