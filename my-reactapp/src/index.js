@@ -262,7 +262,7 @@ class LiveSearch extends React.Component{
 
     render() {
         var Products = this.state.ProductsList.filter(p =>{            
-            return (p.name.toLowerCase().match(this.state.ProductsFilterVal)) || p.condition.toLowerCase().match(this.state.ProductsFilterVal);
+            return (p.name.toLowerCase().match(this.state.ProductsFilterVal)) || (p.cost.toString().match(this.state.ProductsFilterVal)) || (p.condition.toLowerCase().match(this.state.ProductsFilterVal));
         })
         console.log(Products)
         
