@@ -221,12 +221,24 @@ class WeatherForecast extends React.Component {
 }
 // End component
 
+class LiveSearch extends React.Component{
+
+    render(){
+        return(
+            <h3>Hi</h3>
+        )}
+
+
+}
+// End Component
+
+
 ReactDOM.render(
     // To Display All the Components
-    [<SingleForm />, <MultipleForm />, <DisplayAlert />, <WeatherForecast />],
+    // [<SingleForm />, <MultipleForm />, <DisplayAlert />, <WeatherForecast />],
 
     // To display Jus one Component
-    //<DisplayAlert/>,
+    <LiveSearch/>,
 
     // Here is where your componets will be displayed
     document.getElementById('root')
