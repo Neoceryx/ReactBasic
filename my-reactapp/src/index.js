@@ -261,11 +261,13 @@ class LiveSearch extends React.Component{
     // End function
 
     render() {
+
+        // To Filter the Productos
         var Products = this.state.ProductsList.filter(p =>{            
             return (p.name.toLowerCase().match(this.state.ProductsFilterVal)) || (p.cost.toString().match(this.state.ProductsFilterVal)) || (p.condition.toLowerCase().match(this.state.ProductsFilterVal));
         })
-        console.log(Products)
-        
+        // end Products Filter
+       
         return (
             <React.Fragment>
                 <label htmlFor="js_srch">Search</label>
