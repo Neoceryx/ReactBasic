@@ -287,7 +287,7 @@ class LiveSearch extends React.Component{
 
                     <tbody>
                         {Products.map((p, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <td>{p.name}</td>
                                 <td>{p.cost}</td>
                                 <td>{p.condition}</td>
