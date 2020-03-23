@@ -272,9 +272,11 @@ class LiveSearch extends React.Component{
             <React.Fragment>
                 <label htmlFor="js_srch">Search</label>
                 <input id="js_srch" type="text" value={this.state.ProductsFilterVal} onChange={this.handleChange}></input>
+                <br/><br/><br/>
 
+                <small>Records Found: {Products.length}</small>
                 <table>
-                    
+
                     <thead>
                         <tr>
                             <th>Name</th>
