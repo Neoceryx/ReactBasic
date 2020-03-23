@@ -242,7 +242,7 @@ class LiveSearch extends React.Component{
                 },
                 {
                    "id": 3,
-                   "pnameroduct": "Apple pie", 
+                   "name": "Apple pie", 
                    "cost": 2.99,
                    "condition": "Fresh",
                 }
@@ -252,11 +252,50 @@ class LiveSearch extends React.Component{
     }
     // End Component Constructor
 
-    render(){
-        return(
-            <h3>Hi</h3>
-        )}
+    handleChange = event =>{
 
+        // Assign the typed value to the variable
+        this.setState({ProductsFilterVal:event.target.value})
+
+    }
+    // End function
+
+    render() {
+        var Products = this.state.ProductsList.filter(p =>{            
+            return (p.name.toLowerCase().match(this.state.ProductsFilterVal)) || p.condition.toLowerCase().match(this.state.ProductsFilterVal);
+        })
+        console.log(Products)
+        
+        return (
+            <React.Fragment>
+                <label htmlFor="js_srch">Search</label>
+                <input id="js_srch" type="text" value={this.state.ProductsFilterVal} onChange={this.handleChange}></input>
+
+                <table>
+                    
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cost</th>
+                            <th>condition</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {Products.map((p, index) => (
+                            <tr>
+                                <td>{p.name}</td>
+                                <td>{p.cost}</td>
+                                <td>{p.condition}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+
+                </table>
+            </React.Fragment>
+        );
+    }
+    // End Render function
 
 }
 // End Component
