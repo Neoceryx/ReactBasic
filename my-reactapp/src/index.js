@@ -235,17 +235,35 @@ class LiveSearch extends React.Component{
                    "condition": "Fixed"
                 },
                 {
+                    "id": 1,
+                    "name": "Laptop Lenovo 15'", 
+                    "cost": 99.99,
+                    "condition": "Fixed"
+                 },
+                {
                    "id": 2,
                    "name": "Bottle Water Pack 9", 
                    "cost": 4.99,
                    "condition": "New"
                 },
                 {
+                    "id": 2,
+                    "name": "Engine Oil syntetic", 
+                    "cost": 14.99,
+                    "condition": "New"
+                 },
+                {
                    "id": 3,
                    "name": "Apple pie", 
                    "cost": 2.99,
                    "condition": "Fresh",
-                }
+                },
+                {
+                    "id": 3,
+                    "name": "Carrots Bag", 
+                    "cost": 2.99,
+                    "condition": "Fresh",
+                 }
              ]
         };
 
@@ -264,7 +282,10 @@ class LiveSearch extends React.Component{
 
         // To Filter the Productos
         var Products = this.state.ProductsList.filter(p =>{            
-            return (p.name.toLowerCase().match(this.state.ProductsFilterVal)) || (p.cost.toString().match(this.state.ProductsFilterVal)) || (p.condition.toLowerCase().match(this.state.ProductsFilterVal));
+            return ((p.name.toLowerCase().match(this.state.ProductsFilterVal)) ||
+            (p.cost.toString().match(this.state.ProductsFilterVal)) ||
+            (p.condition.toLowerCase().match(this.state.ProductsFilterVal))
+            );            
         })
         // end Products Filter
        
