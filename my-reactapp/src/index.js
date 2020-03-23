@@ -261,7 +261,7 @@ class LiveSearch extends React.Component{
                 {
                     "id": 3,
                     "name": "Carrots Bag", 
-                    "cost": 2.99,
+                    "cost": 5.99,
                     "condition": "Fresh",
                  }
              ]
@@ -288,7 +288,7 @@ class LiveSearch extends React.Component{
             );            
         })
         // end Products Filter
-       
+
         return (
             <React.Fragment>
                 <label htmlFor="js_srch">Search</label>
