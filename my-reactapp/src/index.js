@@ -223,6 +223,35 @@ class WeatherForecast extends React.Component {
 
 class LiveSearch extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            ProductsFilterVal:"",
+            ProductsList:[
+                {
+                   "id": 1,
+                   "name": "Tv Lg 65'", 
+                   "cost": 199.99,
+                   "condition": "Fixed"
+                },
+                {
+                   "id": 2,
+                   "name": "Bottle Water Pack 9", 
+                   "cost": 4.99,
+                   "condition": "New"
+                },
+                {
+                   "id": 3,
+                   "pnameroduct": "Apple pie", 
+                   "cost": 2.99,
+                   "condition": "Fresh",
+                }
+             ]
+        };
+
+    }
+    // End Component Constructor
+
     render(){
         return(
             <h3>Hi</h3>
